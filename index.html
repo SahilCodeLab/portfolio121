@@ -2108,19 +2108,39 @@ $(document).ready(function(){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
 
-<style>
-body {
-    background-color: white !important; /* Apni website ke background color se replace karo */
-    opacity: 1 !important;
-    visibility: visible !important;
-    transition: none !important; /* Koi bhi animation ya delay hata do */
-}
-</style>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.body.style.opacity = "1";
-    document.body.style.visibility = "visible";
-});
-</script>  <!-- "Script" ko "script" kar do -->
+
+
+<head>
+    <!-- Preload CSS for faster loading -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Ensure CSS and JavaScript are ready -->
+    <style>
+        body {
+            background-color: white !important;
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        /* Remove any animation or transition delays */
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Website ka content yahan -->
+
+    <!-- JavaScript to remove delay and ensure content loads without delay -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.style.display = "block";
+        });
+    </script>
+</body>
