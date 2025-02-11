@@ -1,5 +1,17 @@
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sahil Raza | Portfolio</title>
+    
+<meta name="description" content="Welcome to the official portfolio of Sahil Raza. I am a passionate Web Developer, Graphic Designer, and Video Editor with expertise in creating dynamic websites, stunning graphics, and high-quality video editing. Explore my creative work, and see how I bring innovative digital solutions to life.">
+<meta name="keywords" content="Sahil Raza, Web Developer, Graphic Designer, Video Editor, Professional Portfolio, Web Design, Graphic Design, UX/UI Design, Front-end Development, Back-end Development, Video Editing, Freelance Web Developer, Portfolio Website">
+<meta name="author" content="Sahil Raza">
+    <!-- External CSS and JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
@@ -517,13 +529,34 @@ Finally, in just 3 days,</b> I built my final portfolio website, which I am real
         }
     </script>
 <!-- pre loader js  -->
-  <script>
-      var loader = document .getElementById("preloader");
+<script>
+    var loader = document.getElementById("preloader");
 
-      window.addEventListener("load", function(){
-         loader.style.display = "none";
-      })
-  </script>
+    // Time ka record rakhne ke liye variable
+    var loadingTime = 0;
+    var maxLoadingTime = 10000; // 10 seconds (10000 milliseconds)
+
+    // SetTimeout for 10 seconds (agar page jaldi load ho gaya)
+    var timeout = setTimeout(function() {
+        if (loadingTime < maxLoadingTime) {
+            loader.style.display = "none"; // Agar page jaldi load ho gaya toh 10 seconds ke baad preloader hide karo
+        }
+    }, maxLoadingTime);
+
+    // Jab page load ho jaye, tab yeh execute hoga
+    window.addEventListener("load", function(){
+        clearTimeout(timeout); // Agar page jaldi load ho gaya toh timeout cancel kar do
+        loader.style.display = "none"; // Preloader ko hide kar do
+    });
+
+    // Check karte raho loading time ko, agar page dheere load ho raha ho
+    var checkLoadTime = setInterval(function(){
+        loadingTime += 100; // Har 100 ms mein check karo loading time ko
+        if (loadingTime >= maxLoadingTime) {
+            clearInterval(checkLoadTime); // Agar 10 seconds ho gaye toh interval stop kar do
+        }
+    }, 100); // 100ms ke interval par check karein
+</script>
   
   
   
@@ -1607,9 +1640,10 @@ footer .wave#wave4
 /* pr loader design  */
 #preloader
 {
-    background:url("https://i.imgur.com/IGAGvsv.gif") no-repeat center ;
+    background:url("https://i.imgur.com/do6zqLR.gif") no-repeat center ;
     background-size: 20%;
-    filter: invert(100%);
+    
+    filter: invert(0%);
     background-color: #fff;
     height: 100vh;
     width: 100%;
