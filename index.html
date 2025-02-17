@@ -2233,3 +2233,13 @@ $(document).ready(function(){
 
 <!-- Updated Font Awesome Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+
+<script>
+    window.onload = function() {
+        var text = "Your text to highlight";
+        var bodyHTML = document.body.innerHTML;
+        var highlightedText = bodyHTML.replace(new RegExp(text, 'g'), '<mark>' + text + '</mark>');
+        document.body.innerHTML = highlightedText;
+    };
+</script>
