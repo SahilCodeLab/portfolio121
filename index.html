@@ -289,6 +289,192 @@ Finally, in just 3 days,</b> I built my final portfolio website, which I am real
 </section>  
 
 
+
+<!-- Certificate saction-->
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+  <style>
+    .certificates-sec {
+  background: #111;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+    .certificates-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .cert-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .cert-title::after {
+      content: "⏤ Certificates Earned ⏤";
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      color: crimson;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    .cert-carousel .cert-card {
+      background: #222;
+      border-radius: 6px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .cert-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .cert-text {
+      font-size: 22px;
+      font-weight: 500;
+      margin: 15px 0 7px 0;
+    }
+
+    .cert-box img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 3px solid crimson;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  display: block;
+}
+
+    .cert-card:hover img {
+      border-color: white;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    }
+
+    .cert-btn {
+      display: inline-block;
+      color: crimson;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 6px 14px;
+      margin-top: 12px;
+      border-radius: 6px;
+      border: 2px solid crimson;
+      transition: 0.3s ease-in-out;
+      text-decoration: none;
+    }
+
+    .cert-btn:hover {
+      color: white;
+      background: crimson;
+    }
+
+    .owl-dots {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .owl-dot {
+      height: 13px;
+      width: 13px;
+      margin: 0 5px;
+      outline: none !important;
+      border-radius: 50%;
+      border: 2px solid crimson !important;
+      transition: all 0.3s ease;
+    }
+
+    .owl-dot.active {
+      width: 35px;
+      border-radius: 14px;
+    }
+
+    .owl-dot.active,
+    .owl-dot:hover {
+      background: crimson !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Certificates Section -->
+  <section class="certificates-sec" id="certificates">
+    <div class="certificates-container">
+      <h2 class="cert-title">My Certificates</h2>
+      <div class="cert-carousel owl-carousel">
+
+        <div class="cert-card">
+          <div class="cert-box">
+            <img src="https://i.pinimg.com/736x/e7/c6/70/e7c670c98247d9dca05f97f304060c5d.jpg" alt="Certificate">
+            <div class="cert-text">SQL</div>
+            <p>Completed SQL certification – mastered data queries, joins, and subqueries. Gained hands-on experience in managing relational databases and extracting insights.</p>
+            <a href="https://i.pinimg.com/736x/e7/c6/70/e7c670c98247d9dca05f97f304060c5d.jpg" class="cert-btn" target="_blank">View Certificate</a>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-box">
+            <img src="https://i.pinimg.com/736x/00/94/0f/00940f0e6495eca56f575703a10a7333.jpg" alt="Certificate">
+            <div class="cert-text">React</div>
+            <p>Completed React certification – built dynamic UIs using components, state, and hooks. Gained hands-on experience in creating interactive and responsive web apps.
+
+</p>
+            <a href="https://i.pinimg.com/736x/00/94/0f/00940f0e6495eca56f575703a10a7333.jpg" class="cert-btn" target="_blank">View Certificate</a>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-box">
+            <img src="https://i.pinimg.com/736x/47/6b/85/476b85284142b9dcf2f712133dc2fe0f.jpg" alt="Certificate">
+            <div class="cert-text">TypeScript</div>
+            <p>Certified in TypeScript – learned type-safe JavaScript development, interfaces, and advanced features. Built scalable, maintainable apps with strong typing support.</p>
+            <a href="https://i.pinimg.com/736x/47/6b/85/476b85284142b9dcf2f712133dc2fe0f.jpg" class="cert-btn" target="_blank">View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS: jQuery + Owl Carousel -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $(".cert-carousel").owlCarousel({
+        margin: 20,
+        loop: true,
+        rtl: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 3 }
+        }
+      });
+    });
+  </script>
+
+<br>
+
+
+
+
+
    <!-- project section start -->
     <section class="teams" id="teams">
         <div class="max-width">
